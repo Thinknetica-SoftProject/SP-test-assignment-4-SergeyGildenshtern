@@ -14,7 +14,9 @@ code = 0
 
 File.readlines("data/3.txt").each do |line|
     arr  = line.split
-    code += (arr.max.to_i - arr.min.to_i)
+    arr.map! { |elem| elem.to_i }
+
+    code += (arr.max - arr.min)
 end
 
 puts code
