@@ -16,6 +16,17 @@
 #
 ## Решение:
 
+floor = 0
 
+File.open("data/1.txt", "r") do |file|
+    file.each_char do |symbol|
+        if symbol == "("
+            floor += 1
+        elsif symbol == ")"
+            floor -= 1
+        end
+    end
+end
 
+puts floor
 

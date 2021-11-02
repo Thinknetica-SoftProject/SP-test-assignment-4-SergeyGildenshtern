@@ -16,4 +16,14 @@
 #
 ## Решение:
 
+square = 0
 
+File.readlines("data/4.txt").each do |line|
+    arr = line.split("x")
+    arr.map! { |elem| elem.to_i }
+    arr.sort!
+
+    square += (2 * arr[2] * arr[0] + 2 * arr[0] * arr[1] + 2 * arr[1] * arr[2])
+end
+
+puts square

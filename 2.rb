@@ -16,3 +16,18 @@
 #
 ## Решение:
 
+require 'digest'
+
+counter = 0
+input   = gets.chomp
+
+while true
+    hash = Digest::MD5.hexdigest(input + counter.to_s)
+
+    if hash[0..4] == "00000"
+        puts counter
+        break
+    else
+        counter += 1
+    end
+end
